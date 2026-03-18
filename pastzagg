@@ -1,1 +1,296 @@
+Ora aggiungi la sezione LA STORIA subito dopo </section> dell'hero.
+Non toccare nulla di quello che c'è già. Solo aggiungi questa sezione.
 
+════════════════════════════════════
+SEZIONE LA STORIA — CSS DA AGGIUNGERE NELLO <style>
+════════════════════════════════════
+
+#storia {
+  background: #FDF8F0;
+  padding: 130px 8%;
+  position: relative;
+  overflow: hidden;
+}
+#storia::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  pointer-events: none;
+}
+.storia-ornament {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 80px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.storia-ornament::before,
+.storia-ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent, rgba(196,135,58,0.35), transparent);
+}
+.storia-ornament span {
+  color: #C4873A;
+  font-size: 0.72rem;
+}
+.storia-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 58% 42%;
+  gap: 80px;
+  align-items: center;
+}
+.storia-eyebrow {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: #C4873A;
+  display: block;
+  margin-bottom: 18px;
+}
+.storia-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 4.5vw, 4.5rem);
+  line-height: 1.08;
+  color: #2A1505;
+  margin-bottom: 20px;
+}
+.storia-title em {
+  font-style: italic;
+  color: #C4873A;
+}
+.storia-bar {
+  height: 1px;
+  width: 0;
+  background: linear-gradient(90deg, #C4873A, #E8B97A, #C4873A);
+  margin-bottom: 36px;
+  transition: width 1.3s cubic-bezier(0.16,1,0.3,1);
+}
+.storia-bar.visible { width: 130px; }
+.storia-p1 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+  line-height: 1.85;
+  color: #5C3D14;
+  margin-bottom: 22px;
+}
+.storia-p2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: #8B7355;
+  margin-bottom: 40px;
+}
+.storia-divider {
+  height: 1px;
+  background: rgba(196,135,58,0.15);
+  margin-bottom: 36px;
+}
+.storia-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.storia-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2.2rem;
+  color: #C4873A;
+  line-height: 1;
+  display: block;
+}
+.storia-stat-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8B7355;
+  display: block;
+  margin-top: 6px;
+}
+
+/* DECORAZIONE DESTRA */
+.storia-deco {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.storia-deco-box {
+  width: 100%;
+  aspect-ratio: 3/4;
+  max-width: 400px;
+  background: #F5EDD8;
+  border: 1px solid rgba(196,135,58,0.22);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.storia-deco-watermark {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 16rem;
+  color: #C4873A;
+  opacity: 0.05;
+  line-height: 1;
+  user-select: none;
+  position: absolute;
+  bottom: -40px;
+  right: -20px;
+}
+.storia-quote {
+  position: relative;
+  z-index: 1;
+  padding: 40px;
+  text-align: center;
+}
+.storia-quote-line {
+  width: 40px;
+  height: 1px;
+  background: #C4873A;
+  margin: 0 auto 22px;
+}
+.storia-quote-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #5C3D14;
+  margin-bottom: 18px;
+}
+.storia-quote-author {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C4873A;
+}
+.storia-badge {
+  position: absolute;
+  bottom: -22px;
+  left: -22px;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #C4873A, #8B5E25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(196,135,58,0.35);
+  z-index: 2;
+  padding: 12px;
+}
+.storia-badge span {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  line-height: 1.7;
+}
+
+/* MOBILE STORIA */
+@media (max-width: 900px) {
+  #storia { padding: 90px 24px; }
+  .storia-inner {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .storia-deco { display: none; }
+  .storia-stats { grid-template-columns: repeat(3,1fr); gap: 12px; }
+}
+@media (max-width: 480px) {
+  #storia { padding: 70px 18px; }
+  .storia-stats { grid-template-columns: 1fr; gap: 16px; }
+}
+
+════════════════════════════════════
+SEZIONE LA STORIA — HTML
+(sostituisci <section id="storia"></section> con questo)
+════════════════════════════════════
+
+<section id="storia">
+  <div class="storia-ornament"><span>✦</span></div>
+  <div class="storia-inner">
+
+    <!-- SINISTRA -->
+    <div>
+      <span class="storia-eyebrow reveal">La Nostra Storia</span>
+      <h2 class="storia-title reveal d1">
+        Artigiani del<br>
+        <em>tuo dolce preferito</em>
+      </h2>
+      <div class="storia-bar reveal d2"></div>
+      <p class="storia-p1 reveal d2">
+        La famiglia Zaggia porta avanti con passione la tradizione
+        dolciaria artigianale di Stra dal 2009. Ogni mattina, ancora
+        prima dell&rsquo;alba, il forno si accende per sfornare brioche,
+        paste e dolci fatti a mano con ingredienti selezionati con cura.
+      </p>
+      <p class="storia-p2 reveal d3">
+        Situata in una zona pedonale a due passi dalla Villa Pisani,
+        la Pasticceria Zaggia &egrave; diventata il punto di ritrovo
+        preferito di Stra &mdash; il luogo dove la colazione del mattino
+        diventa un momento speciale, dove ogni dolce racconta una storia
+        di passione e tradizione veneziana.
+      </p>
+      <div class="storia-divider reveal d3"></div>
+      <div class="storia-stats reveal d4">
+        <div>
+          <span class="storia-stat-num">2009</span>
+          <span class="storia-stat-label">Tradizione artigianale</span>
+        </div>
+        <div>
+          <span class="storia-stat-num">Ogni giorno</span>
+          <span class="storia-stat-label">Produzione fresca</span>
+        </div>
+        <div>
+          <span class="storia-stat-num">Caffè Illy</span>
+          <span class="storia-stat-label">Selezione premium</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESTRA -->
+    <div class="storia-deco reveal-right">
+      <div class="storia-deco-box">
+        <span class="storia-deco-watermark">Z</span>
+        <div class="storia-quote">
+          <div class="storia-quote-line"></div>
+          <p class="storia-quote-text">
+            &ldquo;Fare colazione qui il sabato mattina
+            &egrave; diventata un&rsquo;abitudine
+            irrinunciabile.&rdquo;
+          </p>
+          <span class="storia-quote-author">— Cliente abituale</span>
+        </div>
+        <div class="storia-badge">
+          <span>Produzione<br>Artigianale<br>Ogni Giorno</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+Non cambiare nient'altro del file.
+Aggiungi il CSS nello <style> esistente.
+Sostituisci solo <section id="storia"></section>.
+Restituisci il file HTML completo aggiornato.
